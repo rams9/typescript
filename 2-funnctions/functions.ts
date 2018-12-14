@@ -32,3 +32,32 @@ return "i am a minister..";
 };
 fun_palace(fun_king,fun_Queen,funb_minister);
 
+//ex:4
+var number_arry:Array<number>=[];
+var reverse_arry:Array<number>=[];
+for(var i:number=1;i<=10;i++)
+{
+    number_arry.push(i);
+    reverse_arry.unshift(i);
+};
+for(var i:number=0;i<number_arry.length;i++)
+{
+document.write(number_arry[i]+" reverse array "+reverse_arry[i]+"<br>");
+};
+
+//Ex:5
+function fun_load():string{
+return "Data from database soon..";
+
+};
+var my_loadArray:Array<any>=[];
+for(var i:number=0;i<5;i++)
+{
+    my_loadArray.push(fun_load);
+};
+for(var i:number=0;i<my_loadArray.length;i++)
+{
+    document.write(my_loadArray[i]+" function definition<br>");
+    document.write(my_loadArray[i]()+"<br>");
+};
+//Ex:6
