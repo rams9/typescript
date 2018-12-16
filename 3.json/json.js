@@ -77,3 +77,15 @@ for (var i = 0; i < wwdata.records.length; i++) {
     document.write(obj.Name + "---" + obj.City);
 }
 ;
+var oracle = function () {
+    return "Oracle database connect soon..";
+};
+var mysql = function () {
+    return "mysql database connect soon..";
+};
+var data = {
+    oracle: oracle,
+    mysql: mysql
+};
+document.write(data.oracle() + "<br>" +
+    data.mysql() + "<br>");

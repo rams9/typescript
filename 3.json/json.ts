@@ -86,6 +86,21 @@ document.write(obj.Name+"---"+obj.City);
 };
 
 
+    var oracle =():string =>{
+    return "Oracle database connect soon..";
+    };
+    var mysql=():string =>{
+    return "mysql database connect soon..";
+    }
+    var data:any ={
+        oracle : oracle,
+        mysql: mysql
+        };
+    
+    
+    document.write(data.oracle()+"<br>"+
+                    data.mysql()+"<br>");
+
 
 
 
