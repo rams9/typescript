@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Json object</h2>
+        <script src="json.js"></script>
+
+        <h3>jquery example</h3>
+        <button>click me</button>
+        <p></p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $("button").click(function() {
+            $.ajax({
+                type:"POST",
+                url:"https://www.w3schools.com/angular/customers.php",
+                success:function(result)
+                {
+                    $("p").text(""+JSON.stringify(result));
+                }
+            });
+        });
+        
+        </script>
+    </body>
+</html>
