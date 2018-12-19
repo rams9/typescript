@@ -69,13 +69,19 @@ document.write(objt.getSubject());
 //ex 4
 
 class class_pk{
+    private var_one:class_ms;
+    private var_two:class_aa;
+    private var_three:class_rc;
 
-    constructor(arg1:any,arg2:any,arg3:any)
+    constructor(arg1:class_ms,arg2:class_aa,arg3:class_rc)
     {
+        this.var_one=arg1;
+        this.var_two=arg2;
+        this.var_three=arg3;
 
     };
  public myfun():string{
-//return this.arg1+"==>"+this.arg2+"==>"+this.arg3;
+return this.var_one.myfun()+"<==>"+this.var_two.myfun()+"<==>"+this.var_three.myfun();
  };
 };
 class class_ms{
@@ -94,8 +100,49 @@ class class_rc{
         };
 };
 
-var myobj:class_pk= new class_pk(new class_ms().myfun(),new class_aa().myfun(),new class_rc().myfun());
-myobj.myfun
+var myobj:class_pk= new class_pk(new class_ms(),new class_aa(),new class_rc());
+document.write("<br>"+myobj.myfun());
+//ex 5
+class class_based{
+public myfun_one():string{
+return "i am from class based..";
+};
+};
+
+class class_derived extends class_based{
+public myfun_two():string{
+    return "i am from derived class..";
+}
+};
+
+var based:class_based= new class_based();
+document.write("<br>"+based.myfun_one());
+var derived:class_derived= new class_derived();
+document.write("<br>"+derived.myfun_one()+"<==>"+derived.myfun_two());
+
+//ex 6
+class oracle{
+public oracleConnection():string{
+return "oracle connection soon..";
+};
+};
+class mysql extends oracle{
+public mysqlConnection(): string {
+return "my sql connection soon..";
+};
+};
+class mssql extends mysql{
+public mssqlConnection():string{
+return "ms sql connection soon..";
+};
+};
+ var objOracle:oracle= new oracle();
+ document.write(objOracle.oracleConnection());
+var objMysql:mysql= new mysql();
+document.write(objMysql.oracleConnection()+"<==>"+objMysql.mysqlConnection());
+var objMssql:mssql= new mssql();
+document.write(objMssql.oracleConnection()+"<br>"+objMssql.mysqlConnection()+"<br>"+objMssql.mssqlConnection());
+// 
 
 
 
